@@ -1,0 +1,40 @@
+# Python Project Dependencies for Bias-Aware News Podcast Generator
+
+# Core Web Framework and Server
+fastapi==0.111.0
+uvicorn==0.30.1 # ASGI server for FastAPI
+
+# LangChain - Orchestration for AI models
+# IMPORTANT: Loosening constraints significantly to allow pip to resolve dependencies.
+# This approach lets pip find the latest compatible versions it can.
+langchain>=0.3.0 # Allow any version 0.3.0 or newer
+langchain-core>=0.3.0 # Allow any version 0.3.0 or newer
+langchain-community>=0.3.0 # Allow any version 0.3.0 or newer
+langchain-google-genai>=1.0.1 # Start from 1.0.1 (as 1.0.0 doesn't exist)
+
+# Web Scraping (for future integration, but good to include now for consistency)
+beautifulsoup4==4.12.3
+requests==2.32.3
+
+# Audio Generation (Text-to-Speech) and Manipulation
+# Choose ONE cloud TTS provider based on your API access and preference.
+# Uncomment the one you're using.
+google-cloud-texttospeech==2.27.0 # Google Cloud Text-to-Speech
+# elevenlabs==0.3.0 # Eleven Labs (for high-quality, natural voices)
+# boto3==1.34.137 # AWS SDK for Python (includes AWS Polly TTS)
+
+pydub==0.25.1 # For stitching audio segments and managing audio files.
+              # IMPORTANT: Requires FFmpeg installed separately on your system.
+
+# Search Tool Integration (for fact-checking)
+# Choose ONE search API client based on your API key availability.
+# Uncomment the one you're using.
+tavily-python==0.3.3 # Direct client for Tavily Search API
+# google-search-results==2.4.2 # For SerpAPI, which wraps various search engines
+
+# Utilities
+python-dotenv==1.0.1 # For securely loading environment variables (like API keys)
+pydantic==2.8.2 # Data validation library, a core dependency of FastAPI
+
+
+elevenlabs
