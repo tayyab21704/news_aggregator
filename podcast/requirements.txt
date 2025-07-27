@@ -1,0 +1,4 @@
+requests
+pydub
+google-generativeai
+python-dotenv
